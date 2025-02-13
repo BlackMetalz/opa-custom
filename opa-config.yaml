@@ -1,0 +1,5 @@
+services:
+  example:
+    url: https://my-opa-domain.com
+labels:
+  app: my-opa
