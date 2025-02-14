@@ -10,5 +10,12 @@ docker run --rm -v $(pwd):/project -w /project openpolicyagent/conftest --policy
 - The name of Dockerfile should be alway `Dockerfile`. I was tried with `Dockerfile_test` and it doesn't works!
 - The policy is updated from outdate repo in Ref section with help of AI Bot xD
 
+# Build image with custom policy for better integrate into pipeline!
+```
+docker run --rm -v $(pwd):/project kienlt992/opa-custom:v0.56.0 test Dockerfile
+
+5 tests, 5 passed, 0 warnings, 0 failures, 0 exceptions
+```
+
 # Ref:
 - https://github.com/gbrindisi/dockerfile-security/blob/main/dockerfile-security.rego
