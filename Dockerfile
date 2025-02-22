@@ -3,8 +3,14 @@ FROM openpolicyagent/conftest:v0.56.0
 # Change working directory first
 WORKDIR /project
 
-# No need to create /policy directory since we'll use the working directory
-COPY dockerfile-security.rego .
+# Copy the dockerfile-security.rego file into the image
+COPY dockerfile-security.rego /policy/
 
-# Modify entrypoint to use the mounted policy file directly
-ENTRYPOINT ["conftest", "--policy", "dockerfile-security.rego"]
+# Copy the entrypoint script into the image
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Make the entrypoint script executable
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Use the entrypoint script as the entrypoint
+ENTRYPOINT ["entrypoint.sh"]

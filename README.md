@@ -12,7 +12,7 @@ docker run --rm -v $(pwd):/project -w /project openpolicyagent/conftest --policy
 
 # Build image with custom policy for better integrate into pipeline!
 ```
-docker run --rm -v $(pwd):/project kienlt992/opa-custom:v0.56.0 test Dockerfile
+docker run --rm -v $(pwd):/project kienlt992/opa-custom:v0.56.0 Dockerfile
 
 5 tests, 5 passed, 0 warnings, 0 failures, 0 exceptions
 ```
